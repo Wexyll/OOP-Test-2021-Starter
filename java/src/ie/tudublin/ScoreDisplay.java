@@ -7,12 +7,15 @@ import processing.core.PApplet;
 
 public class ScoreDisplay extends PApplet
 {
-	String score = "DEFGABcd";
-	//String score = "D2E2F2G2A2B2c2d2";
+	//String score = "DEFGABcd";
+	String score = "D2E2F2G2A2B2c2d2";
 	//String score = "DEF2F2F2EFA2A2B2AFD2E2D2D2D2";
+
+	//Declaring arrayList
+	ArrayList<Notes> notes = new ArrayList<>();
 	
-	public void settings()
-	{
+	
+	public void settings(){
 		size(1000, 500);
 
 		// How to convert a character to a number
@@ -21,14 +24,12 @@ public class ScoreDisplay extends PApplet
 		println(i);
 	}
 
-	public void setup() 
-	{
-		
-		
+	public void setup() {
+		notes = new ArrayList<>(score.length());
+        notes.add(new Notes(('A'),1));
 	}
 
-	public void draw()
-	{
+	public void draw(){
 		int x2 = 350;
 		int y2 = 210;
 		float border = 0.1f * width;
